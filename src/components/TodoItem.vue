@@ -5,6 +5,12 @@
 <script>
   export default {
     name: 'TodoItem',
+    props: {
+      item: {
+        type: Object,
+        required: true
+      }
+    }
   }
 </script>
 

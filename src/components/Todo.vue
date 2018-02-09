@@ -3,7 +3,7 @@
     <h1>Todo list</h1>
     <ul>
       <li v-for="item in items" v-bind:key="item.id">
-        <div class="todo-item">{{item.title}}</div>
+        <TodoItem v-bind:item="item" />
       </li>
     </ul>
   </div>
@@ -11,9 +11,11 @@
 
 <script>
   import request from 'superagent'
+  import TodoItem from './TodoItem'
 
   export default {
     name: 'Todo',
+    components: { TodoItem },
     data() {
       return { items: [] }
     },
